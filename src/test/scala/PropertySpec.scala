@@ -13,5 +13,9 @@ object PropertySpec  extends Properties("PropertyUtil")  {
       PropertyUtil.concate(l1, l2) ==
       l1 ++  l2
     }
-
+  property("reverse") =
+    Prop.forAll {
+      (list: List[Int]) =>
+      PropertyUtil.reverse( PropertyUtil.reverse(list)) == list
+    }
 }

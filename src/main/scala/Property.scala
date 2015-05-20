@@ -12,4 +12,13 @@ object PropertyUtil {
     }
     result
   }
+  // reverse List Function
+  def reverse(list: List[Int]) = {
+    def loop(lst: List[Int], res: List[Int]): List[Int] =
+      lst match{
+        case Nil => res
+        case head :: tail => loop(tail, head :: res)
+      }
+    loop(list, Nil)
+  }
 }
